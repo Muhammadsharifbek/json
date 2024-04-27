@@ -10,7 +10,7 @@ function TripList() {
   const { data: trips, loader, error } = useFetch(url);
 
   return (
-    <div className="trip-list">
+    <div className="trip-list ">
       <h1>TripList</h1>
       {loader && (
         <div>

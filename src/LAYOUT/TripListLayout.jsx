@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 function TripListLayout() {
   return (
-    <div>
+    <div className="article-container">
       <h2>Articles:</h2>
       <Outlet />
     </div>

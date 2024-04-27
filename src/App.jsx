@@ -14,28 +14,54 @@ import Home from "./PAGES/Home";
 import "./App.css";
 
 function App() {
-  const routes = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<RootLayous />}>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-
-        <Route path="triplist" element={<TripListLayout />}>
-          <Route index element={<TripList />} />
-
-          <Route path=":id" element={<TripListPages />} />
-        </Route>
-
-        <Route path="contacts" element={<ContactLayout />}>
-          <Route path="Form" element={<Form />} />
-          <Route path="Faq" element={<Faq />} />
-          <Route />
-        </Route>
-
-        <Route path="*" element={<PageNotFound />} />
-      </Route>
-    )
-  );
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayous />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "triplist",
+          element: <TripListLayout />,
+          children: [
+            {
+              index: true,
+              element: <TripList />,
+            },
+            {
+              path: ":id",
+              element: <TripListPages />,
+            },
+          ],
+        },
+        {
+          path: "contacts",
+          element: <ContactLayout />,
+          children: [
+            {
+              path: "Form",
+              element: <Form />,
+            },
+            {
+              path: "Faq",
+              element: <Faq />,
+            },
+          ],
+        },
+        {
+          path: "*",
+          element: <PageNotFound />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <div className="App">

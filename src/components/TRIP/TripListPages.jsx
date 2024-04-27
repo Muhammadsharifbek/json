@@ -11,7 +11,6 @@ function TripListPages() {
     <div>
       {loader && <h2> {loader} </h2>}
       {error && <h2> {error} </h2>}
-      <h2>dasda</h2>
       <ul>
         {trip && (
           <li>

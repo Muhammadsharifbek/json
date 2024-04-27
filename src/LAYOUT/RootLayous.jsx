@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 function RootLayous() {
   return (
@@ -11,7 +12,9 @@ function RootLayous() {
           <NavLink to="/about"> About</NavLink>
           <NavLink to="/contacts"> Contacts</NavLink>
         </div>
+        <BreadCrumbs />
       </header>
+
       <main>
         <Outlet />
       </main>
