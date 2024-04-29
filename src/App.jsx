@@ -5,8 +5,8 @@ import TripListPages from "./components/TRIP/TripListPages";
 import TripListLayout from "./LAYOUT/TripListLayout";
 import ContactLayout from "./LAYOUT/ContactLayout";
 import TripList from "./components/TRIP/TripList";
-import PageNotFound from "./LAYOUT/PageNotFound";
 import RootLayous from "./LAYOUT/RootLayous";
+import ErrorPage from "./LAYOUT/ErrorPage";
 import Form from "./PAGES/HELP/Form";
 import Faq from "./PAGES/HELP/Faq";
 import About from "./PAGES/About";
@@ -18,6 +18,7 @@ function App() {
     {
       path: "/",
       element: <RootLayous />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -57,7 +58,7 @@ function App() {
         },
         {
           path: "*",
-          element: <PageNotFound />,
+          element: <ErrorPage />,
         },
       ],
     },
